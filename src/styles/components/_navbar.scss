@@ -1,0 +1,15 @@
+.navbar{
+    background: linear-gradient(
+        .82deg
+        ,$primary 61.99%, $primary-light 116.05%);
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar__icons{
+    padding: 10px 30px;
+}

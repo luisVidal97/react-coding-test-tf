@@ -1,0 +1,13 @@
+.textInputComponent{
+    border-radius: 5px;
+    border-color: $white-dark;
+    border-width: 1px;
+    padding: 10px;
+    width: 100%;
+
+    &:focus{
+        outline: none !important;
+        border-color: $primary;
+        box-shadow: 0 0 3px $primary;
+    }
+}
