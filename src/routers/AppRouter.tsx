@@ -19,7 +19,7 @@ export const AppRouter = () => {
             <Route exact path="/page-not-found" component={NotFoundPage}/>
             <Route exact path="/focusable-input" component={FocusableComponentsPage}/>
             <Route exact path="/voting-list/:candidates" component={VotingListPage}/>
-            <Redirect to="page-not-found" />
+            <Redirect to="/page-not-found" />
         </Switch>
       </div>
     </Router>
