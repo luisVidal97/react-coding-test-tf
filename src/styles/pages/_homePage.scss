@@ -1,0 +1,24 @@
+.homepage__container{
+    padding: 10px;
+}
+
+.homepage__title{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.homepage__div-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 100px;
+}
+
+.homepage__buttons{
+    background-color: white;
+    border-radius: 8px;
+    color: $primary;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 15px;
+}
