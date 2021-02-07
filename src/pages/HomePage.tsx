@@ -1,6 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export const HomePage: React.FC = () => {
+
+    const history = useHistory();
+
+    const handleOnClick = () => {
+
+        Swal.fire({
+            title: 'Enter candidates number',
+            input: 'number',
+            showCancelButton: true,
+            confirmButtonText: 'Look up',
+            showLoaderOnConfirm: true,
+            preConfirm: (number) => {
+                console.log(number);
+                history.push(`/voting-list/${number}`);
+            }
+        });
+
+    }
+
     return (
         <div className="default-bg">
             <div className="homepage__github">
@@ -19,12 +39,12 @@ export const HomePage: React.FC = () => {
                     <Link to="/focusable-input" className="homepage__buttons">
                        Focusable input. Test it now!
                     </Link>
-                    <Link to="/" className="homepage__buttons">
-                        Part 2
-                    </Link>
+                    <button onClick={ handleOnClick } className="homepage__buttons">
+                        Voting list. Check it now!
+                    </button>
                 </div>
 
             </div>
         </div>
-    )
+    );
 }

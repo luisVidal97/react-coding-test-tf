@@ -1,0 +1,60 @@
+.cardUser{
+    border: 1 solid $white-dark;
+    border-radius: '5px';
+    box-shadow: 0 0 5px $white-dark;
+    color: $primary;
+    display: flex;
+    height: 80px;
+    margin: 10px auto;
+}
+
+.cardUser__fullName{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 20px;
+    width: 13%;
+
+    h3, h5 {
+        margin: 0px;
+    }
+
+    h3 {
+        margin-bottom: 5px;
+    }
+}
+
+.cardUser__votes{
+    text-align: center;
+    width: 6%;
+    h5{
+        margin: 10px 0px;
+    }
+    span{
+        font-size: 2rem;
+        font-weight: bold;
+        
+    }
+}
+
+
+.cardUser__slogan{
+    width: 20%;
+}
+
+.cardUser_buttons{
+    background-color: transparent;
+    border: none;
+    border-radius: 30px;
+    color: $primary;
+    margin: 10px;
+    &:hover{
+        background-color: $white-dark;
+        cursor: pointer;
+    }
+
+    &:focus{
+        outline: none !important;
+    }
+}
+                    
+   

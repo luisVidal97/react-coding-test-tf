@@ -10,6 +10,10 @@ export const NotFoundPage: React.FC = () => {
                 <Link to="/" className="notfoundpage__text notfoundpage__link">
                     Please return to home page
                 </Link>
+                <br />
+                <div className="notfoundpage__img">
+                    <img src="./assets/Loft-404.gif"/>
+                </div>
             </div>
         </div>
     );
