@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CardUser } from '../components/CardUser';
+import { ModeVotingListComponent } from '../components/ModeVotingListComponent';
 
 
 import { NavBarComponent } from '../components/NavBarComponent';
@@ -10,10 +11,51 @@ export const VotingListPage: React.FC = () => {
 
     const { candidates }: {candidates: string} = useParams();
     
-    const { data: candidatesArray , isLoading} = useFetchRandomUsers(candidates);
+    const [ candidatesArray , isLoading, setData] = useFetchRandomUsers(candidates);
+    const [lastVoted, setLastVoted] = useState<string>('');
     
 
-    
+    const handleIncrementVote = (id: string) => {
+        const user:any = candidatesArray.find( (item: any) => item.id === id);
+        let votes = user.votes;
+
+        if(votes === 20) return;
+        
+        votes++;
+        setLastVoted(id);
+        const newArray = candidatesArray.map((item: any)=> {
+            if(item.id === id){
+                item.votes = votes
+            }
+            return item;
+        });
+        
+        setData((currentState: any) => ({
+            ...currentState,
+            data: newArray
+        }));
+    }
+
+    const handleDecrementVote = (id: string) => {
+        const user:any = candidatesArray.find( (item: any) => item.id === id);
+        let votes = user.votes;
+
+        if(votes === 0) return;
+        
+        votes--;
+        setLastVoted(id);
+        const newArray = candidatesArray.map((item: any)=> {
+            if(item.id === id){
+                item.votes = votes
+            }
+            return item;
+        });
+        
+        setData((currentState: any) => ({
+            ...currentState,
+            data: newArray
+        }));
+    }
 
     return (
         <>
@@ -22,6 +64,7 @@ export const VotingListPage: React.FC = () => {
             <br/>
             <h1 className="votingListPage__title">Voting list</h1>
             <br/>
+            
             {
             isLoading?
                 <div className="sk-circle">
@@ -39,11 +82,36 @@ export const VotingListPage: React.FC = () => {
                     <div className="sk-circle12 sk-child"></div>
                 </div>
             :
-                <div >
+                <div className="votingListPage__modes animate__animated animate__fadeIn">
+                    <ModeVotingListComponent 
+                        title="Candidates List"
+                        candidatesArray={candidatesArray}
+                        lastVoted={lastVoted}
+                        handleIncrementVote= {handleIncrementVote}
+                        handleDecrementVote= {handleDecrementVote}
+                    />
+                    <hr/>
+                    <br />
+                    <ModeVotingListComponent 
+                        title="Order by votes"
+                        mode= "orderByVotes"
+                        lastVoted={lastVoted}
+                        candidatesArray={[...candidatesArray]}
+                        handleIncrementVote={handleIncrementVote}
+                        handleDecrementVote={handleDecrementVote}
+                    />
+                    <hr/>
+                    <br />
+                    <ModeVotingListComponent 
+                        title="Order by age"
+                        mode= "orderByAge"
+                        lastVoted={lastVoted}
+                        candidatesArray={[...candidatesArray]}
+                        handleIncrementVote= {handleIncrementVote}
+                        handleDecrementVote= {handleDecrementVote}
+                    />
                     
-                    {
-                        candidatesArray.map((item: any) => <CardUser key={ item.id} {...item}/>)
-                    }
+                    
                     <br/>
                 </div>
                 

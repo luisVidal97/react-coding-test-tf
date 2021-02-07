@@ -4,28 +4,33 @@
     box-shadow: 0 0 5px $white-dark;
     color: $primary;
     display: flex;
-    height: 80px;
+    height: 120px;
     margin: 10px auto;
+    position: relative;
 }
 
+.cardUser__content{
+    display: flex;
+    flex-direction: column;
+}
 .cardUser__fullName{
     display: flex;
     flex-direction: column;
     margin: 15px 20px;
-    width: 13%;
+    width: 40%;
 
-    h3, h5 {
+    h4, h5 {
         margin: 0px;
     }
 
-    h3 {
+    h4{
         margin-bottom: 5px;
     }
 }
 
 .cardUser__votes{
     text-align: center;
-    width: 6%;
+    
     h5{
         margin: 10px 0px;
     }
@@ -38,15 +43,21 @@
 
 
 .cardUser__slogan{
-    width: 20%;
+    margin: 0px;
+    margin-top: 10px;
+    font-size: .8rem;
+}
+
+.cardUser__divVotes{
+    display: flex;
 }
 
 .cardUser_buttons{
     background-color: transparent;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     color: $primary;
-    margin: 10px;
+    padding: 10px;
     &:hover{
         background-color: $white-dark;
         cursor: pointer;
@@ -57,4 +68,15 @@
     }
 }
                     
-   
+.cardUser__withoutButtons{
+    span{
+        font-size: 50px;
+    }
+}
+
+.cardUser__highlight{
+    color: #fc8a08;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getRandomUsers } from "../helpers/getRandommUsers";
 
 export const useFetchRandomUsers = (candidates: string) => {
-    const [state, setstate] = useState({
+    const [state, setstate] = useState<any>({
         data: [],
         isLoading: true
     });
@@ -21,5 +21,5 @@ export const useFetchRandomUsers = (candidates: string) => {
             } );
     }, [candidates])
 
-    return state;
+    return [state.data, state.isLoading, setstate];
 }

@@ -13,7 +13,8 @@ export const getRandomUsers = async (candidatesNumber: string) =>{
                 sentenceUpperBound: 10,  // Max. number of words per sentence.
             });
             const votes = Math.floor(Math.random() * 10) + 1;
-            const age = parseInt(item.dob.age) < 18? Math.floor(Math.random() * 100) + 18 :item.dob.age; 
+            let age = parseInt(item.dob.age) ;
+            age =  age < 18? Math.floor(Math.random() * 100) + 18 : age;
             return ({
                 id: item.email,
                 firstName: item.name.first,
