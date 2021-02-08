@@ -12,7 +12,7 @@ export const NotFoundPage: React.FC = () => {
                 </Link>
                 <br />
                 <div className="notfoundpage__img">
-                    <img src="./assets/Loft-404.gif"/>
+                    <img src="../assets/Loft-404.gif" alt="Page not found"/>
                 </div>
             </div>
         </div>

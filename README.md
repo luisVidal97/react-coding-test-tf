@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+![App](/home.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Conding Test - TF
 
-## Available Scripts
+This is a simple project developing using create-react-app. The project is divided into 2 parts.
 
-In the project directory, you can run:
+1. The first part consists in recreate a focusable component, it means, a text input which focus attribute will be active if you pass a specific prop. [Take a glimpse.](https://luisvidal97.github.io/react-coding-test-tf/#/focusable-input)
+![App](/focusable.PNG)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. The second part consists in show a list of random users with the following attributes: name, lastname, age, votes and slogan. At the begining you could find them with votes in the rango from 0 to 10, bute then you could vote for anyone you want. At the same time, the screen will show an ordering list of the candidates by votes and another ordered by age. All this data is fetching of the next api: [Random Users](https://randomuser.me/api/). The number of candidates depends on a parameter that you pass it through the route.
+ [Take a glimpse.](https://luisvidal97.github.io/react-coding-test-tf/#/voting-list/3)
+![App](/voteList.PNG)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+If you want to take a overall look, please [visit it here.](https://luisvidal97.github.io/react-coding-test-tf/#/)
 
-### `npm test`
+## Starting 🚀
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you you want to run the project locally, please clone this repository in one of your personal folders.
+```
+git clone https://github.com/luisVidal97/react-coding-test-tf.git
+```
 
-### `npm run build`
+And then, in the project root run the following to install all required dependences:
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+With the above, you could enjoy the project, explore different functionalities and do whatever you want.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Developing with 🛠️
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [React with Functional Components](https://es.reactjs.org/) - UI library
+* [TypeScript](https://www.typescriptlang.org/) - Pogramming language
+* [Sass](https://sass-lang.com/) - Used like CSS pre-processor
 
-### `npm run eject`
+## Authors ✒️
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* **Luis Fernando Cruces** - luisfcv97@gmail.com
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you have any recomendation or something to contribute, please let me know sending a message! I will be very eager to receive it.
